@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --pd-card: #ffffff;
+    --pd-surface: #f8fafc;
+    --pd-border: #e2e8f0;
+    --pd-border2: #cbd5e1;
+    --pd-text-primary: #0f172a;
+    --pd-text-secondary: #475569;
+    --pd-text-muted: #64748b;
+    --pd-green: #10b981;
+    --pd-green-text: #047857;
+    --pd-green-dim: rgba(16, 185, 129, 0.12);
+    --pd-red: #ef4444;
+    --pd-red-dim: rgba(239, 68, 68, 0.12);
+  }
+
+  html.dark {
+    color-scheme: dark;
+
+    --pd-card: #0f172a;
+    --pd-surface: #111827;
+    --pd-border: #334155;
+    --pd-border2: #475569;
+    --pd-text-primary: #f8fafc;
+    --pd-text-secondary: #cbd5e1;
+    --pd-text-muted: #94a3b8;
+    --pd-green: #34d399;
+    --pd-green-text: #a7f3d0;
+    --pd-green-dim: rgba(52, 211, 153, 0.16);
+    --pd-red: #f87171;
+    --pd-red-dim: rgba(248, 113, 113, 0.16);
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply min-h-screen bg-slate-50 text-slate-900 antialiased transition-colors dark:bg-slate-950 dark:text-slate-100;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+.pd-table tr:hover {
+  background: var(--pd-surface);
+}
+
+/* ── Profit / Loss ── */
+
+.profit {
+  color: var(--pd-green);
+}
+
+.loss {
+  color: var(--pd-red);
+}
+
+.profit-bg {
+  background: var(--pd-green-dim);
+}
+
+.loss-bg {
+  background: var(--pd-red-dim);
+}
+
+/* ── Skeleton ── */
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--pd-surface);
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── Scrollbar ── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pd-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pd-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pd-border-hi);
+}

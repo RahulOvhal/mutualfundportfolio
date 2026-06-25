@@ -1,0 +1,131 @@
+{
+  "investors": [
+    {
+      "id": "inv-001",
+      "name": "Rohan Mehta",
+      "pan": "ABCPM1234R",
+      "email": "rohan.mehta@example.com"
+    },
+    {
+      "id": "inv-002",
+      "name": "Neha Shah",
+      "pan": "PLKRS5678M",
+      "email": "neha.shah@example.com"
+    }
+  ],
+  "folios": [
+    {
+      "folioNumber": "FOLIO-1001",
+      "investorId": "inv-001",
+      "schemeCode": "SCH-111",
+      "pan": "ABCPM1234R"
+    },
+    {
+      "folioNumber": "FOLIO-1002",
+      "investorId": "inv-001",
+      "schemeCode": "SCH-222",
+      "pan": "ABCPM1234R"
+    },
+    {
+      "folioNumber": "FOLIO-2001",
+      "investorId": "inv-002",
+      "schemeCode": "SCH-111",
+      "pan": "PLKRS5678M"
+    },
+    {
+      "folioNumber": "FOLIO-2002",
+      "investorId": "inv-002",
+      "schemeCode": "SCH-333",
+      "pan": "PLKRS5678M"
+    }
+  ],
+  "schemes": [
+    {
+      "schemeCode": "SCH-111",
+      "schemeName": "Bluechip Equity Fund",
+      "currentNav": 245.12
+    },
+    {
+      "schemeCode": "SCH-222",
+      "schemeName": "Growth Opportunity Fund",
+      "currentNav": 118.72
+    },
+    {
+      "schemeCode": "SCH-333",
+      "schemeName": "Balanced Advantage Fund",
+      "currentNav": 67.55
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TXN-10001",
+      "folioNumber": "FOLIO-1001",
+      "schemeCode": "SCH-111",
+      "type": "BUY",
+      "date": "2021-01-15",
+      "units": 100,
+      "nav": 155.5,
+      "amount": 15550
+    },
+    {
+      "id": "TXN-10002",
+      "folioNumber": "FOLIO-1001",
+      "schemeCode": "SCH-111",
+      "type": "BUY",
+      "date": "2022-03-10",
+      "units": 50,
+      "nav": 185.2,
+      "amount": 9260
+    },
+    {
+      "id": "TXN-10003",
+      "folioNumber": "FOLIO-1002",
+      "schemeCode": "SCH-222",
+      "type": "BUY",
+      "date": "2023-06-05",
+      "units": 200,
+      "nav": 89.75,
+      "amount": 17950
+    },
+    {
+      "id": "TXN-10004",
+      "folioNumber": "FOLIO-2001",
+      "schemeCode": "SCH-111",
+      "type": "BUY",
+      "date": "2022-09-20",
+      "units": 80,
+      "nav": 195.8,
+      "amount": 15664
+    },
+    {
+      "id": "TXN-10005",
+      "folioNumber": "FOLIO-2002",
+      "schemeCode": "SCH-333",
+      "type": "BUY",
+      "date": "2021-11-18",
+      "units": 150,
+      "nav": 54.25,
+      "amount": 8137.5
+    },
+    {
+      "id": "TXN-20001",
+      "folioNumber": "FOLIO-2002",
+      "schemeCode": "SCH-333",
+      "type": "BUY",
+      "date": "2022-12-01",
+      "units": 100,
+      "nav": 62.4,
+      "amount": 6240
+    },
+    {
+      "id": "TXN-20002",
+      "folioNumber": "FOLIO-1001",
+      "schemeCode": "SCH-111",
+      "type": "DIVIDEND",
+      "date": "2023-12-31",
+      "units": 0,
+      "nav": 0,
+      "amount": 520
+    }
+  ]
+}

@@ -1,75 +1,93 @@
-# React + TypeScript + Vite
+# Portfolio Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React + TypeScript + Vite application for viewing investor portfolio summaries, tracking scheme-level holdings, and exporting reports.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is a client-side portfolio dashboard that uses a local JSON data source to display investor portfolios with summary metrics and detail views.
 
-## React Compiler
+Key capabilities include:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Demo authentication with protected routes
+- Investor portfolio overview with XIRR, gain/loss, and current value
+- Investor detail pages with charts and scheme-level holdings
+- PDF report export for portfolio summaries
+- Error boundary handling for graceful UI recovery
 
-## Expanding the ESLint configuration
+## Demo Login
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Use the following credentials to access the application:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Email: `demo@portfolio.com`
+- Password: `Portfolio@123`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Install dependencies:
 
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start the development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+Open the app in your browser at:
+
+```text
+http://localhost:5173
+```
+
+## Available Scripts
+
+- `npm run dev` � Start Vite development server
+- `npm run build` � Build production assets
+- `npm run preview` � Preview production build locally
+- `npm run lint` � Run ESLint on `.ts` and `.tsx` files
+- `npm run test` � Run Vitest
+- `npm run test:coverage` � Run tests with coverage
+
+## Project Structure
+
+- `src/main.tsx` � Entry point and root render
+- `src/App.tsx` � Provider wrapping, routes, and app shell
+- `src/pages/Login/Login.tsx` � Demo login experience
+- `src/pages/Dashboard/Dashboard.tsx` � Portfolio overview
+- `src/pages/InvestorDetails/InvestorDetails.tsx` � Investor-level analytics
+- `src/features/portfolio/portfolioSlice.ts` � Portfolio state and data normalization
+- `src/features/auth/authSlice.ts` � Authentication state
+- `src/store` � Redux store configuration
+- `src/data/portfolio.json` � Local portfolio dataset
+
+## Data and Behavior
+
+The application loads local portfolio data from `src/data/portfolio.json` and computes:
+
+- invested amount
+- current portfolio value
+- absolute gain/loss
+- XIRR
+- scheme holdings per investor
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Redux Toolkit
+- React Router DOM
+- Tailwind CSS
+- Recharts
+- jsPDF + jsPDF AutoTable
+- React Hook Form
+- Zod
+- Sonner
+
+## Notes
+
+- Authentication is simulated via hard-coded demo credentials.
+- The app is designed for prototype and internal review purposes.
+- Data is loaded from a local JSON file rather than a production API.
